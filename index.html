@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ландшафтный дизайн — Гармония природы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Nav Component -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">GreenSpace</div>
+            <a href="tel:+77271234567" class="phone-link">+7 (727) 123-45-67</a>
+            
+            <button class="burger-btn" aria-label="Открыть меню" id="burgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#gardens">Completed Gardens</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#prices">Price List</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section Component -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>We Create Harmony of Nature on Your Site</h1>
+                <p>Профессиональное проектирование и благоустройство территории вашей мечты.</p>
+                <a href="#contact-form" class="btn-cta">Calculate Project Cost</a>
+            </div>
+        </section>
+
+        <!-- Grid Section Component -->
+        <section class="grid-section container" id="gardens">
+            <h2>Архитектурные и ландшафтные кейсы</h2>
+            <div class="cases-grid">
+                <article class="case-card">
+                    <div class="image-wrapper">
+                        <!-- Имитация Before/After -->
+                        <span class="badge">До / После</span>
+                    </div>
+                    <div class="case-info">
+                        <h3>Частный сад в предгорьях</h3>
+                        <p>Площадь: <strong>15 соток</strong></p>
+                        <p class="vector">Стиль: Альпийский минимализм</p>
+                    </div>
+                </article>
+
+                <article class="case-card">
+                    <div class="image-wrapper">
+                        <span class="badge">До / После</span>
+                    </div>
+                    <div class="case-info">
+                        <h3>Загородный комплекс</h3>
+                        <p>Площадь: <strong>25 соток</strong></p>
+                        <p class="vector">Стиль: Регулярный французский парк</p>
+                    </div>
+                </article>
+
+                <article class="case-card">
+                    <div class="image-wrapper">
+                        <span class="badge">До / После</span>
+                    </div>
+                    <div class="case-info">
+                        <h3>Терраса у водоема</h3>
+                        <p>Площадь: <strong>10 соток</strong></p>
+                        <p class="vector">Стиль: Эко-натуральный</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Feedback Form Component -->
+        <section class="form-section container" id="contacts">
+            <div class="form-wrapper" id="contact-form">
+                <h2>Вызов инженера-замерщика</h2>
+                <form class="feedback-form">
+                    <div class="field-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" required placeholder="Иван Иванов">
+                    </div>
+
+                    <div class="field-group">
+                        <label for="phone">Контактный телефон</label>
+                        <input type="tel" id="phone" required placeholder="+7 (_) _--">
+                    </div>
+                    <div class="field-group">
+                        <label for="location">Географическое расположение объекта</label>
+                        <input type="text" id="location" required placeholder="Город, район, коттеджный поселок">
+                    </div>
+
+                    <div class="field-group">
+                        <label for="date">Дата визита</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Вызвать специалиста</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h4>База знаний</h4>
+                <ul>
+                    <li><a href="#">Уход за газоном весной</a></li>
+                    <li><a href="#">Полив хвойных растений</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Партнеры</h4>
+                <ul>
+                    <li><a href="#" target="_blank">Питомник растений "Эдем"</a></li>
+                    <li><a href="#" target="_blank">Садовая техника Pro</a></li>
+                </ul>
+            </div>
+            <div class="footer-col legal">
+                <p>&copy; 2026 Landscape Design Company. Все права защищены.</p>
+                <button id="themeToggle" class="theme-switcher">Сменить тему (Светлая/Темная)</button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Простейший скрипт для переключения темы и мобильного меню (опционально для удобства проверки)
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            htmlElement.setAttribute('data-theme', currentTheme === 'light' ? 'dark' : 'light');
+        });
+
+        const burgerBtn = document.getElementById('burgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        burgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
