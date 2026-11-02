@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ландшафтный дизайн - Гармония природы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Header / Nav Component -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">GreenSpace</div>
+            <a href="tel:+77001234567" class="phone-link">+7 (700) 123-45-67</a>
+            
+            <nav class="nav" id="navMenu">
+                <a href="#gardens">Completed Gardens</a>
+                <a href="#services">Services</a>
+                <a href="#prices">Price List</a>
+                <a href="#contacts">Contacts</a>
+            </nav>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Сменить тему">🌙</button>
+            
+            <button class="burger" id="burgerBtn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Hero Section Component -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>We Create Harmony of Nature on Your Site</h1>
+                <p>Профессиональный ландшафтный дизайн, благоустройство и озеленение территорий под ключ.</p>
+                <a href="#feedback" class="btn-cta">Calculate Project Cost</a>
+            </div>
+        </section>
+
+        <!-- 3. Grid Section Component -->
+        <section class="grid-section container" id="gardens">
+            <h2>Архитектурные и ландшафтные кейсы</h2>
+            <div class="cases-grid">
+                <article class="case-card">
+                    <div class="image-wrapper"><span>Before / After</span></div>
+                    <h3>Частный сад в стиле Модерн</h3>
+                    <p>Площадь: 15 соток</p>
+                    <span class="vector-tag">Геометрический стиль</span>
+                </article>
+                <article class="case-card">
+                    <div class="image-wrapper"><span>Before / After</span></div>
+                    <h3>Зона отдыха у водоема</h3>
+                    <p>Площадь: 25 соток</p>
+                    <span class="vector-tag">Пейзажный стиль</span>
+                </article>
+                <article class="case-card">
+                    <div class="image-wrapper"><span>Before / After</span></div>
+                    <h3>Альпийская горка и рокарий</h3>
+                    <p>Площадь: 10 соток</p>
+                    <span class="vector-tag">Альпийский стиль</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. Feedback Form Component -->
+        <section class="feedback-section container" id="feedback">
+            <h2>Вызов замерщика-специалиста</h2>
+            <form class="feedback-form">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required placeholder="Иван">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Контактный телефон</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__">
+                </div>
+                <div class="form-group">
+                    <label for="location">Географическое положение объекта</label>
+                    <input type="text" id="location" name="location" required placeholder="Город, район, адрес">
+                </div>
+                <div class="form-group">
+                    <label for="date">Дата визита</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <button type="submit" class="btn-cta">Вызвать специалиста</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- 5. Footer Component -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>База знаний</h4>
+                <p>Статьи по уходу за флорой, газоном и хвойными растениями в разные сезоны.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Партнеры</h4>
+                <ul>
+                    <li><a href="#">Питомник растений "ЭкоФлора"</a></li>
+                    <li><a href="#">Ландшафтный инвентарь Pro</a></li>
+                </ul>
+            </div>
+            <div class="footer-col legal">
+                <p>&copy; 2026 GreenSpace. Все права защищены.</p>
+                <p>Юридическая информация и политика конфиденциальности.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Простой скрипт для переключения темы и мобильного меню -->
+    <script>
+        const burgerBtn = document.getElementById('burgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        const themeToggle = document.getElementById('themeToggle');
+        
+        burgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        themeToggle.addEventListener('click', () => {
+            const html = document.documentElement;
+            if (html.getAttribute('data-theme') === 'light') {
+                html.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
+            } else {
+                html.setAttribute('data-theme', 'light');
+                themeToggle.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>
